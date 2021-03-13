@@ -26,6 +26,32 @@
 				<div class="hairline__item--shadow--fix fs-20">0.5px</div>
 			</div>
 		</div>
+		<div class="fs-16">
+			<h3>border-image介绍--原图（背景图方式显示81*81）：</h3>
+			<div class="brimg brimg--origin"></div>
+			<h3>border-image介绍--0个参数(默认的stretch拉伸)</h3>
+			<div class="brimg brimg--stretch"></div>
+			<h3>border-image介绍--1个参数(round平铺)</h3>
+			<div class="brimg brimg--round"></div>
+			<h3>border-image介绍--1个参数(repeat平铺)</h3>
+			<div class="brimg brimg--repeat"></div>
+			<section class="brimg__desc fs-14">
+				<h3>平铺VS重复：</h3>
+				<p>打个比方，您从万科地产买了个99.5m*99.5m的毛坯房，地面要贴瓷砖，都是1m*1m的正方形瓷砖。</p>
+				<p>
+					如果是“平铺”，对不起，这1m边长的瓷砖不行，要处理！怎么处理法？很简单，每个瓷砖压成0.995m*0.995m的，这样就可以了，所以，平铺就是以完整的单元铺满整个区域。
+				</p>
+				<p>
+					如果是“重复”，就直接把这1m*1m的瓷砖从一个角落一个一个的放置，放到头放不下了怎么办？直接把瓷砖从中间“咔”掉，于是最后会在房子的边角看到很多半截的瓷砖。
+				</p>
+			</section>
+			<h3>border-image应用--圆角效果</h3>
+			<div class="brimg--radius">圆角</div>
+			<h3>border-image应用--多边框效果</h3>
+			<div class="brimg--multi"></div>
+			<h3>border-image处理1px问题</h3>
+			<div>使用border-image，在元素的边框上设置一个一半透明一半显示的图片。</div>
+		</div>
 	</div>
 </template>
 
@@ -102,7 +128,7 @@ html {
 		box-sizing: border-box;
 	}
 	.hairline--title {
-		padding: 0.2rem 0.1rem;
+		padding: 0.2rem 0;
 	}
 	.hairline__item--side {
 		width: 4rem;
@@ -178,6 +204,47 @@ html {
 		// overflow: hidden;
 		margin: 0.2rem auto;
 		box-shadow: inset 0 -1px 1px -1px #2c3a47;
+	}
+	.brimg {
+		width: 300px;
+		height: 100px;
+		margin: 0 auto;
+	}
+	.brimg--origin {
+		background: url('../assets/images/icon/border.png') center no-repeat;
+		// background-size: contain;
+	}
+	.brimg--stretch {
+		border: 1em solid orange;
+		border-image: url('../assets/images/icon/border.png') 27;
+	}
+	.brimg--round {
+		border: 1em solid orange;
+		border-image: url('../assets/images/icon/border.png') 27 round;
+	}
+	.brimg--repeat {
+		border: 16px solid orange;
+		border-image: url('../assets/images/icon/border.png') 27 repeat;
+	}
+	p {
+		text-indent: 28px;
+	}
+	.brimg--radius {
+		width: 100px;
+		text-align: center;
+		margin: 0 auto;
+		color: #fff;
+		border: 10px solid orange;
+		border-image: url('../assets/images/icon/rounded_corner.png') 20 fill; // fill
+	}
+	.brimg--multi {
+		width: 80px;
+		height: 20px;
+		text-align: center;
+		margin: 0 auto;
+		color: #fff;
+		border: 20px solid orange;
+		border-image: url('../assets/images/icon/border_round.png') 20 round;
 	}
 }
 </style>

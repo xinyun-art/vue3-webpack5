@@ -4,6 +4,3 @@ $base: 750; // 设计稿基准
 @function px2vw($pixel) {
 	@return ($pixel / $base) * 100vw;
 }
-.bs-bb {
-	box-sizing: border-box;
-}
