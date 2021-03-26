@@ -1,15 +1,15 @@
 <template>
-	<div class="v-box">v-box</div>
+  <div class="v-box">v-box</div>
 </template>
 
 <script>
 export default {
-	name: 'v-box',
+  name: 'VBox',
 }
 </script>
 
 <style lang="scss">
 .v-box {
-	color: skyblue;
+  color: skyblue;
 }
 </style>
